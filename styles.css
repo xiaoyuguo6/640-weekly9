@@ -88,4 +88,20 @@ footer p {
 }
 
 [data-selected-theme="orange"] {
-    --color-b
+    --color-background: #FA7D61;
+    --color-text: #1E1E24;
+    --color-accent: #F3601C;
+}
+
+[data-selected-theme="purple"] {
+    --color-background: #D6C2F2;
+    --color-text: #3C2A4D;
+    --color-accent: #B392F0;
+}
+
+[data-selected-theme="sunset"] {
+    --color-background: #FFAB91;
+    --color-text: #6D4C41;
+    --color-accent: #FF7043;
+}
+
