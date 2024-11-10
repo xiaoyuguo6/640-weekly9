@@ -1,8 +1,21 @@
 // Function to apply the selected theme
 const applyTheme = (theme) => {
+    // 找到对应的按钮
     const target = document.querySelector(`[data-theme="${theme}"]`);
+    if (!target) {
+        console.error("Error: No button found for theme", theme);
+        return;
+    }
+    // 设置 data-selected-theme 属性
     document.documentElement.setAttribute("data-selected-theme", theme);
-    document.querySelector('[data-theme][aria-pressed="true"]').setAttribute('aria-pressed', 'false');
+    console.log("Current Theme Set to:", theme); // 调试语句
+
+    // 将上一个按钮的 aria-pressed 设置为 false
+    const previousButton = document.querySelector('[data-theme][aria-pressed="true"]');
+    if (previousButton) {
+        previousButton.setAttribute('aria-pressed', 'false');
+    }
+    // 设置当前按钮的 aria-pressed 为 true
     target.setAttribute('aria-pressed', 'true');
 };
 
@@ -13,6 +26,7 @@ const handleThemeSelection = (event) => {
     if (isPressed !== "true") {
         const theme = target.getAttribute('data-theme');
         applyTheme(theme);
+        // 将选择的主题保存到 localStorage
         localStorage.setItem('selected-theme', theme);
     }
 };
