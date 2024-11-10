@@ -1,0 +1,61 @@
+:root {
+    --color-background: #A4F3A2;
+    --color-text: #034435;
+    --color-accent: #00CC66;
+}
+
+[data-selected-theme="green"] {
+    --color-background: #A4F3A2;
+    --color-text: #034435;
+    --color-accent: #00CC66;
+}
+
+[data-selected-theme="blue"] {
+    --color-background: #55dde0;
+    --color-text: #2B4150;
+    --color-accent: #00D4E7;
+}
+
+[data-selected-theme="pink"] {
+    --color-background: #DFB2F4;
+    --color-text: #463546;
+    --color-accent: #F06EFC;
+}
+
+[data-selected-theme="orange"] {
+    --color-background: #FA7D61;
+    --color-text: #1E1E24;
+    --color-accent: #F3601C;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.theme-switcher {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    background: var(--color-accent);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[aria-pressed="true"] {
+    background: var(--color-text);
+    color: var(--color-background);
+}
